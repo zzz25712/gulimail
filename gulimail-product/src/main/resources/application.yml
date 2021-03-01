@@ -1,0 +1,36 @@
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  datasource:
+    password: 123456
+    url: jdbc:mysql://192.168.43.11:3306/gulimall_pms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  application:
+    name: gulimail-product
+  thymeleaf:
+    cache: false
+  redis:
+    host: 192.168.43.11
+
+mybatis-plus:
+  global-config:
+    db-config:
+#    主键自增
+      id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  mapper-locations: classpath:/mapper/**/*.xml
+server:
+  port: 8000
+logging:
+  level:
+    com.itdemo.gulimail: debug
+gulimail-thread:
+  core: 20
+  max-pool: 100
+  time: 10
